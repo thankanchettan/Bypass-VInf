@@ -63,15 +63,15 @@ def stats(update, context):
             f'<b>❖ Memory Total:</b> {mem_t}\n'\
             f'<b>❖ Memory Free:</b> {mem_a}\n'\
             f'<b>❖ Memory Used:</b> {mem_u}\n\n'\
-            f'<b>❖ Join Us @mirror_247_chennel ❖</b>\n'
+            f'<b>❖ Powered By Team @MovieJunction ❖</b>\n'
     sendMessage(stats, context.bot, update.message)
 
 
 def start(update, context):
     buttons = ButtonMaker()
-    buttons.buildbutton("Group", "https://t.me/+1ivP1aO-bRo0Yzg1")
-    buttons.buildbutton("Channel", "https://t.me/mirror_247_chennel")
-    buttons.buildbutton("Maintainer", "https://t.me/rk_shaju")
+    buttons.buildbutton("Group", "https://t.me/MovieJunction")
+    buttons.buildbutton("Channel", "https://t.me/Mj_Updates")
+    buttons.buildbutton("Creater", "https://t.me/MasterOfTG")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(3))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
@@ -80,7 +80,7 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
         sendMarkup(start_string, context.bot, update.message, reply_markup)
     else:
-        sendMarkup('Access Denied,\nIf you want to mirror files, Join below 👇', context.bot, update.message, reply_markup)
+        sendMarkup('Access Denied - You Are Not Authorised To Use This Bot,\nThis Bot Is Created For Private Use Only, Contact Creater In Case Of Any Queries', context.bot, update.message, reply_markup)
 
 def restart(update, context):
     restart_message = sendMessage("Restarting...⏳", context.bot, update.message)
